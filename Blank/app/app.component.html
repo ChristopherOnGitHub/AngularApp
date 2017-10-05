@@ -1,8 +1,26 @@
-﻿<h1>Hello {{name}}</h1>
-<article>This template holds the TypeScript source code of the <a href="https://angular.io/docs/ts/latest/quickstart.html" target="_blank">angular.io quickstart</a>, for good starting Angular 2 client app with ASP.NET WebApi 2 backend.</article><br />
-<p>See official Angular.io <a href="https://angular.io/docs/ts/latest/" target="_blank">documentation</a>.</p>
-<p>See cookbook <a href="https://angular.io/docs/ts/latest/cookbook/visual-studio-2015.html" target="_blank">Visual Studio QuickStart</a>.</p>
+﻿
+<h1>Hello {{name.fName}}!</h1>
+<h2>Your Current Information:</h2>
+<h4><strong>Name/Occupation:</strong> {{name.fName}} {{name.lName}}, {{profession}}</h4>
+<h4><strong>Email:</strong> {{email}}</h4>
+<h4><strong>Address:</strong> {{address.streetAdd}} {{address.city}}, {{address.state}} {{address.zip}}</h4>
 
-<p>This template <a href="https://github.com/Burgyn/Blank" target="_blank">GitHub repository</a>.</p>
-<br />
-<footer><a href="https://twitter.com/MinoMartiniak" target="_blank">Miňo Martiniak</a></footer>
+<button (click)="toggleEdit()">{{showEdit ? "Hide Editor" : "Edit Info"}}</button>
+
+<div *ngIf="showEdit">
+<h4 style="display:inline">First Name: </h4><input [(ngModel)]="name.fName" style="display:inline"/>
+    <br/>
+<h4 style="display:inline">Edit Last Name: </h4><input [(ngModel)]="name.lName" style="display:inline" />
+    <br />
+<h4 style="display:inline">Edit Profession: </h4><input [(ngModel)]="profession" style="display:inline" />
+    <br />
+<h4 style="display:inline">Edit Email: </h4><input [(ngModel)]="email" style="display:inline" />
+    <br />
+    <h4 style="display:inline">Edit Street Address: </h4><input [(ngModel)]="address.streetAdd" style="display:inline" />
+    <br />
+    <h4 style="display:inline">Edit City: </h4><input [(ngModel)]="address.city" style="display:inline" />
+    <br />
+    <h4 style="display:inline">Edit State: </h4><input [(ngModel)]="address.state" style="display:inline" />
+    <br />
+    <h4 style="display:inline">Edit Zipcode: </h4><input type="number" [(ngModel)]="address.zip" style="display:inline" />
+</div>

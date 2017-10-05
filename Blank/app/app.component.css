@@ -1,4 +1,8 @@
 ﻿h1 {
     font-size: 300%;
-    color: #34495e;
+    color: darkred;
+}
+
+#info {
+    color: red;
 }
